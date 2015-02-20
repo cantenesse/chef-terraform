@@ -1,22 +1,22 @@
 node.default['terraform']['url_base'] = 'https://dl.bintray.com/mitchellh/terraform'
-node.default['terraform']['version'] = '0.3.1'
+node.default['terraform']['version'] = '0.3.7'
 node.default['terraform']['arch'] = kernel['machine'] =~ /x86_64/ ? 'amd64' : '386'
 
 # Transform raw output of the bintray checksum list into a Hash[filename, checksum].
 # https://dl.bintray.com/mitchellh/terraform/${VERSION}_SHA256SUMS?direct
 node.default['terraform']['raw_checksums'] = <<-EOF
-  f4a42243abb2b3d6fde815f43480217982bc676f0510c46c05f544546c4d2d89  terraform_0.3.1_darwin_386.zip
-  dda41425c7eb06c5e8b3f5ad4904e993aa8a9ab6b61f954ee2e259667cb6ff57  terraform_0.3.1_darwin_amd64.zip
-  a3751daa08f0e30087d1ce58cc4200d30d647e8687fc6d285f57d5f5e6d61aaf  terraform_0.3.1_freebsd_386.zip
-  d1a54b62edd9e575dda3b1ff91fdf22c5aed380e04807228dd4bab8d54b81ba8  terraform_0.3.1_freebsd_amd64.zip
-  084427ce689b5070ec168009d7e296aa2fd69423bf2d8bf9acb1cd502a01d828  terraform_0.3.1_freebsd_arm.zip
-  f773e9f75c055789e67dde80db4306d2f922cfa2f7b0d9c6413412778c594ffd  terraform_0.3.1_linux_386.zip
-  bd7b3e352a186010471818f8c50578e4afa9a2d2cf71acffb1810292db725e33  terraform_0.3.1_linux_amd64.zip
-  8f742a7753cb5ed48e7dd04dec4875b107265c82bfe9df1e362012aa6cd60839  terraform_0.3.1_linux_arm.zip
-  a6001660534adf695923cb1e9a4fb85134472c9b59af4ca0bed7e4991e7763f0  terraform_0.3.1_openbsd_386.zip
-  0adf2e37a3b30ab2b0665b0cb30721fd9fe97566aa4e65c4b5928910d40e5e0a  terraform_0.3.1_openbsd_amd64.zip
-  e5ac6a68224e2a9b4774237cf37da39722239b1a058082fb830288c20691225a  terraform_0.3.1_windows_386.zip
-  76ff60d10fe74556d7d20c557c15e853c5900036cf14576584a459fd84c78e30  terraform_0.3.1_windows_amd64.zip
+  2514928f49d3d9285e43706ffb4f3f1e63d2763fa1384fd397dbdb86a8d61e54  terraform_0.3.7_darwin_386.zip
+  aecdc8119cd637e3e60967c97f9912735400814546b8e925152203fb6e99c732  terraform_0.3.7_darwin_amd64.zip
+  5b80ceb8fa7a5034135234c73e090096276f4ae4289ee78afbdf8705323c974b  terraform_0.3.7_freebsd_386.zip
+  6183cc4784dd6b436157a8fbbac2525cc054f64a0a666c07a1384838ccdaf101  terraform_0.3.7_freebsd_amd64.zip
+  03fd50924bf629c0f91eafa754b06dbd5ef03a5d6366eb17b61a7d2829c8bf52  terraform_0.3.7_freebsd_arm.zip
+  e7ef409c65439c7f1195aacb629a01dab2a6de67f79dec40093bec42d8be9d6c  terraform_0.3.7_linux_386.zip
+  b63b36d76d9ea31cb6971edf23899ceb7291800618177adf987b7660b486527b  terraform_0.3.7_linux_amd64.zip
+  6f636f6bc892833cbb9c54f0826841151d3295c2c6dc83caecd714b6afbcb47d  terraform_0.3.7_linux_arm.zip
+  86f2f444f9ec92d363a01b0acfb062d5078191788686d5c85b621f08fad38658  terraform_0.3.7_openbsd_386.zip
+  6e91575d95dd8a561602b0bba1a1debe6f8f22467385909259f86149114723dd  terraform_0.3.7_openbsd_amd64.zip
+  8cdc90b3d30cfa7f9548a5d1e433cf27dfa1128a8cc828f96f8f6c59a7feac36  terraform_0.3.7_windows_386.zip
+  324ff1e3e7d86b927b8b621f125932b8f12b88edbccfea484a002b2f9043685a  terraform_0.3.7_windows_amd64.zip
 EOF
 node.default['terraform']['checksums'] = Hash[
   node['terraform']['raw_checksums'].split("\n").map { |s| s.split.reverse }
